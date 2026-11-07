@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Verify the authenticity of certificates online.">
+  <title>CertiVerify | Certificate Verification</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">✓</span> CertiVerify</a>
+    <nav><a class="active" href="index.html">Verify Certificate</a><a href="admin.html">Admin</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">TRUST • TRANSPARENCY • VERIFICATION</div>
+      <h1>Verify a certificate<br><span>with confidence.</span></h1>
+      <p>Enter the unique Certificate ID below to check whether a certificate exists in this demo registry.</p>
+    </section>
+
+    <section class="verify-card">
+      <div class="card-icon">⌕</div>
+      <h2>Certificate verification</h2>
+      <p class="muted">Enter the Certificate ID exactly as it appears on the certificate.</p>
+      <form id="verify-form">
+        <label for="certificate-id">Certificate ID</label>
+        <div class="input-row">
+          <input id="certificate-id" name="certificateId" placeholder="e.g. CV-2026-0001" autocomplete="off" required>
+          <button class="button primary" type="submit">Verify now</button>
+        </div>
+      </form>
+      <div id="verification-result" class="result hidden" aria-live="polite"></div>
+      <div class="sample-note">Try the sample ID: <button class="text-button" id="sample-id" type="button">CV-2026-0001</button></div>
+    </section>
+
+    <section class="steps">
+      <h2>How it works</h2>
+      <div class="step-grid">
+        <article><span>01</span><h3>Find your ID</h3><p>Locate the unique Certificate ID printed on your document.</p></article>
+        <article><span>02</span><h3>Enter the ID</h3><p>Type the ID into the verification field above.</p></article>
+        <article><span>03</span><h3>View the result</h3><p>Check the registry result and compare the details with your document.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© 2026 CertiVerify — Student project demo</span><span>This demo is not an official certification authority.</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>

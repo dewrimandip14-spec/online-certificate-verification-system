@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | CertiVerify</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">✓</span> CertiVerify</a>
+    <nav><a href="index.html">Verify Certificate</a><a class="active" href="admin.html">Admin</a></nav>
+  </header>
+
+  <main class="admin-main">
+    <section id="login-panel" class="login-card">
+      <div class="eyebrow">REGISTRY MANAGEMENT</div>
+      <h1>Admin sign in</h1>
+      <p class="muted">Sign in to add, edit, or remove demo certificate records.</p>
+      <form id="login-form">
+        <label for="admin-password">Demo password</label>
+        <input id="admin-password" type="password" placeholder="Enter demo password" required>
+        <button class="button primary full" type="submit">Sign in</button>
+        <p id="login-error" class="error-text" aria-live="polite"></p>
+      </form>
+      <p class="hint">Demo password: <strong>admin123</strong></p>
+    </section>
+
+    <section id="dashboard" class="dashboard hidden">
+      <div class="dashboard-heading">
+        <div><div class="eyebrow">CONTROL PANEL</div><h1>Certificate records</h1><p class="muted">Create and manage records in this browser's local demo registry.</p></div>
+        <button id="logout-button" class="button secondary" type="button">Sign out</button>
+      </div>
+
+      <div class="stats">
+        <article class="stat-card"><span>Total records</span><strong id="total-count">0</strong></article>
+        <article class="stat-card"><span>Valid records</span><strong id="valid-count">0</strong></article>
+      </div>
+
+      <section class="form-card">
+        <h2 id="form-title">Add a certificate</h2>
+        <form id="certificate-form" class="record-form">
+          <input type="hidden" id="original-id">
+          <div class="form-grid">
+            <div><label for="cert-id">Certificate ID *</label><input id="cert-id" required placeholder="CV-2026-0002"></div>
+            <div><label for="student-name">Student name *</label><input id="student-name" required placeholder="Full name"></div>
+            <div><label for="course-name">Course / qualification *</label><input id="course-name" required placeholder="e.g. Web Development"></div>
+            <div><label for="issuer">Issuing organization *</label><input id="issuer" required placeholder="Institution name"></div>
+            <div><label for="issue-date">Issue date *</label><input id="issue-date" type="date" required></div>
+            <div><label for="status">Status</label><select id="status"><option value="Valid">Valid</option><option value="Revoked">Revoked</option></select></div>
+          </div>
+          <div class="form-actions"><button class="button primary" id="save-button" type="submit">Save certificate</button><button class="button secondary hidden" id="cancel-edit" type="button">Cancel edit</button></div>
+          <p id="form-message" class="form-message" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="table-card">
+        <div class="table-heading"><h2>All certificates</h2><input id="record-search" class="search-input" placeholder="Search records..."></div>
+        <div class="table-wrap"><table><thead><tr><th>Certificate ID</th><th>Student</th><th>Course</th><th>Status</th><th>Actions</th></tr></thead><tbody id="records-body"></tbody></table></div>
+        <p id="empty-records" class="muted empty-state hidden">No matching records found.</p>
+      </section>
+      <p class="security-note"><strong>Demo limitation:</strong> Records and the demo login are stored in browser JavaScript/localStorage. This is not secure authentication or tamper-proof storage. Use a server, database, and protected admin authentication before real-world use.</p>
+    </section>
+  </main>
+  <footer><span>© 2026 CertiVerify — Student project demo</span><span>Local browser storage only</span></footer>
+  <script src="admin.js"></script>
+</body>
+</html>
